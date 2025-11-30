@@ -64,3 +64,112 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
+    .event-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .event-card h3 {
+      margin-top: 0;
+    }
+
+    button {
+      background: #00356b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #00356b;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>UCSD SOCIAL CLUB</header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#signup">Sign Up</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Welcome Tritons!</h1>
+    <p>Your hub for all social events, gatherings, and community fun at UCSD.</p>
+  </div>
+
+  <div class="section" id="about">
+    <h2>About Us</h2>
+    <p>
+      The UCSD Social Club brings students together through fun weekly events,
+      cultural exchanges, meet-ups, study groups, and outdoor adventures.
+      Everyone at UC San Diego is welcome — come build community and make unforgettable memories.
+    </p>
+  </div>
+
+  <div class="section" id="events">
+    <h2>Upcoming Events</h2>
+    <div class="events-container" id="events-list"></div>
+  </div>
+
+  <div class="section" id="signup">
+    <h2>Join the Club</h2>
+    <p>Sign up to get updates and reserve spots for events!</p>
+
+    <form id="signup-form">
+      <input type="text" placeholder="Your Name" required
+        style="padding:10px; width:60%; border-radius:6px; border:1px solid #00356b;" /><br><br>
+
+      <input type="email" placeholder="Your Email" required
+        style="padding:10px; width:60%; border-radius:6px; border:1px solid #00356b;" /><br><br>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="signup-msg" style="font-weight:bold; margin-top:15px;"></p>
+  </div>
+
+  <footer>
+    © 2025 UCSD Social Club — Made with Triton Pride
+  </footer>
+
+  <script>
+    const events = [
+      { title: "Sunset Bonfire at La Jolla Shores", date: "March 10", desc: "Snacks, music, and beach vibes." },
+      { title: "Geisel Study Jam", date: "March 12", desc: "A chill study meetup with free snacks." },
+      { title: "UCSD Movie Night", date: "March 15", desc: "Outdoor movie screening on campus." }
+    ];
+
+    const eventsList = document.getElementById('events-list');
+    events.forEach(ev => {
+      const card = document.createElement('div');
+      card.className = 'event-card';
+      card.innerHTML = `<h3>${ev.title}</h3><p>${ev.date}</p><p>${ev.desc}</p><button>Reserve Spot</button>`;
+      eventsList.appendChild(card);
+    });
+
+    const signupForm = document.getElementById('signup-form');
+    const signupMsg = document.getElementById('signup-msg');
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      signupMsg.textContent = "Thank you for joining! You'll receive updates soon.";
+      signupForm.reset();
+    });
+  </script>
+</body>
+</html>
+
