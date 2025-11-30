@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <header class="header-with-logo">
-  <img src="ChatGPT Image Nov 29, 2025, 07_09_38 PM.png" class="club-logo">
-  <span>UCSD SOCIAL CLUB</span>
-</header>
-
+  <title>UCSD Social Club</title>
 
   <style>
-    /* Global settings */
+    /* Global smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
 
+    /* Global fade-in */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -24,11 +21,16 @@
       animation: fadeIn 1.2s ease;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     /* Header */
     header {
       background: #00356b;
       color: white;
-      padding: 30px;
+      padding: 20px 30px;
       text-align: center;
       font-size: 2rem;
       letter-spacing: 2px;
@@ -38,7 +40,7 @@
       z-index: 10;
     }
 
-    /* ADD LOGO CSS RIGHT HERE */
+    /* Logo Header Flex */
     .header-with-logo {
       display: flex;
       align-items: center;
@@ -51,38 +53,38 @@
       width: auto;
       border-radius: 8px;
       object-fit: contain;
-      animation: fadeIn 1s ease forwards;
+      animation: fadeIn 1.2s ease;
     }
 
     .club-logo:hover {
       transform: scale(1.06);
-      transition: 0.3s ease;
+      transition: .3s ease;
     }
 
-    /* Next existing section continues */
+    /* Navigation bar */
     nav {
       background: #ffd200;
       padding: 15px;
       display: flex;
       justify-content: center;
       gap: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     }
-
 
     nav a {
       text-decoration: none;
       color: #00356b;
       font-weight: bold;
       font-size: 1.1rem;
-      transition: all .3s ease;
+      transition: .3s ease;
     }
 
     nav a:hover {
-      opacity: 0.6;
+      opacity: .6;
       transform: scale(1.1);
     }
 
-    /* Hero with slide-up animation */
+    /* Hero section */
     .hero {
       padding: 120px 20px;
       text-align: center;
@@ -106,7 +108,7 @@
       font-size: 1.2rem;
     }
 
-    /* Sections slide-up */
+    /* Sections */
     .section {
       padding: 60px 20px;
       max-width: 900px;
@@ -119,7 +121,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Events grid */
+    /* Event grid */
     .events-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -127,14 +129,14 @@
       margin-top: 30px;
     }
 
-    /* Event card with hover glow */
+    /* Event cards */
     .event-card {
       background: white;
       border-radius: 14px;
       padding: 25px;
       text-align: center;
       box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-      transition: all 0.3s ease;
+      transition: .3s ease;
       border: 2px solid transparent;
     }
 
@@ -144,7 +146,7 @@
       border-color: #00356b;
     }
 
-    /* Buttons animation */
+    /* Buttons */
     button {
       background: #00356b;
       color: white;
@@ -152,9 +154,8 @@
       padding: 12px 25px;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: .3s ease;
     }
 
     button:hover {
@@ -177,14 +178,20 @@
 
 <body>
 
-  <header>UCSD SOCIAL CLUB</header>
+  <!-- FIXED HEADER WITH LOGO -->
+  <header class="header-with-logo">
+    <img src="ChatGPT Image Nov 29, 2025, 07_09_38 PM.png" class="club-logo">
+    <span>UCSD SOCIAL CLUB</span>
+  </header>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#events">Events</a>
     <a href="#signup">Sign Up</a>
   </nav>
 
+  <!-- Hero Section -->
   <div class="hero">
     <h1>Welcome Tritons!</h1>
     <p>Your hub for all social events, gatherings, and community fun at UCSD.</p>
@@ -194,9 +201,9 @@
   <div class="section" id="about">
     <h2>About Us</h2>
     <p>
-      The UCSD Social Club brings students together through fun weekly events,
-      cultural exchanges, meet-ups, study groups, and outdoor adventures.
-      Everyone at UC San Diego is welcome — come build community and make unforgettable memories.
+      The UCSD Social Club brings students together through weekly events,
+      cultural exchanges, study groups, outdoor adventures, and community bonding.
+      All UCSD students are welcome — come build unforgettable memories!
     </p>
   </div>
 
@@ -224,6 +231,7 @@
     <p id="signup-msg" style="font-weight:bold; margin-top:15px;"></p>
   </div>
 
+  <!-- Footer -->
   <footer>
     © 2025 UCSD Social Club — Made with Triton Pride
   </footer>
