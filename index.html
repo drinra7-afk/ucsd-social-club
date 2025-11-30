@@ -3,27 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UCSD Social Club</title>
+  <header class="header-with-logo">
+  <img src="ChatGPT Image Nov 29, 2025, 07_09_38 PM.png" class="club-logo">
+  <span>UCSD SOCIAL CLUB</span>
+</header>
+
 
   <style>
-    /* Global smooth scrolling */
+    /* Global settings */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Global fade-in on load */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f0f8ff;
       color: #00356b;
       overflow-x: hidden;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      animation: fadeIn 1.2s ease;
     }
 
     /* Header */
@@ -40,15 +38,36 @@
       z-index: 10;
     }
 
-    /* Navigation */
+    /* ADD LOGO CSS RIGHT HERE */
+    .header-with-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .club-logo {
+      height: 55px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .club-logo:hover {
+      transform: scale(1.06);
+      transition: 0.3s ease;
+    }
+
+    /* Next existing section continues */
     nav {
       background: #ffd200;
       padding: 15px;
       display: flex;
       justify-content: center;
-      gap: 35px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      gap: 30px;
     }
+
 
     nav a {
       text-decoration: none;
